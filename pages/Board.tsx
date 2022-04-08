@@ -3,6 +3,7 @@ import Square from './Square';
 import { attemptClick } from '../redux/thunks/game';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../redux/reducers';
+import { Box, Card, CardContent, CardHeader, Grid, Typography } from '@mui/material';
 
 function Board() {
     const dispatch = useDispatch();
@@ -29,24 +30,40 @@ function Board() {
         status = 'Next player: ' + (xIsNext ? 'X' : 'O');
     }
     return (
-        <div>
-            <div className="status">{status}</div>
-            <div className="board-row">
+        <Grid container spacing={0} direction='row' justifyContent='center' alignItems='center'>
+            <Grid item xs={12}>
+                <Typography variant='h6' align='center'>{status}</Typography>
+            </Grid>
+            <Grid item xs={4}>
                 {renderSquare(0)}
+            </Grid>
+            <Grid item xs={4}>
                 {renderSquare(1)}
+            </Grid>
+            <Grid item xs={4}>
                 {renderSquare(2)}
-            </div>
-            <div className="board-row">
+            </Grid>
+
+            <Grid item xs={4}>
                 {renderSquare(3)}
+            </Grid>
+            <Grid item xs={4}>
                 {renderSquare(4)}
+            </Grid>
+            <Grid item xs={4}>
                 {renderSquare(5)}
-            </div>
-            <div className="board-row">
+            </Grid>
+
+            <Grid item xs={4}>
                 {renderSquare(6)}
+            </Grid>
+            <Grid item xs={4}>
                 {renderSquare(7)}
+            </Grid>
+            <Grid item xs={4}>
                 {renderSquare(8)}
-            </div>
-        </div>
+            </Grid>
+        </Grid>
     );
 
 }

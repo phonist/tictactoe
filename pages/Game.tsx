@@ -1,17 +1,21 @@
 import React from 'react';
 import Board from './Board';
+import { Card, CardContent, CardHeader } from '@mui/material';
 
 function Game() {
     return (
-        <div className="game">
-            <div className="game-board">
+        <Card 
+            sx={
+                { minWidth: 275 },
+                { maxWidth: 460 }
+            }
+            elevation={0}
+            variant='outlined'
+        >
+            <CardContent>
                 <Board />
-            </div>
-            <div className="game-info">
-                <div>{/* status */}</div>
-                <ol>{/* TODO */}</ol>
-            </div>
-        </div>
+            </CardContent>
+        </Card>
     );
 }
 
