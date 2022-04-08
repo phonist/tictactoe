@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import Square from './Square';
+import { attemptClick } from '../redux/thunks/game';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Board() {
-    const [squares, setSquares] = useState(Array(9).fill(null));
-    const [xIsNext, setXIsNext] = useState(true);
+    const dispatch = useDispatch();
+    const squares = useSelector(state => state.game.board);
+    const xIsNext = useSelector(state => state.game.player);
+
     const handleClick = (i: number) => {
-        const squaresClone = [...squares];
-        if(squares[i] !== null) {
-            return;
-        }
-        squaresClone[i] = xIsNext ? 'X' : 'O';
-        setSquares(squaresClone);
-        setXIsNext(!xIsNext);
+        dispatch(attemptClick({ i, squares, xIsNext }));
     }
+
     const renderSquare = (i: number) => {
         return <Square 
         value={squares[i]} 
