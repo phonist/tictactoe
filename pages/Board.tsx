@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import Square from './Square';
 import { attemptClick } from '../redux/thunks/game';
 import { useSelector, useDispatch } from 'react-redux';
+import { AppState } from '../redux/reducers';
 
 function Board() {
     const dispatch = useDispatch();
-    const squares = useSelector(state => state.game.board);
-    const xIsNext = useSelector(state => state.game.player);
+    const squares = useSelector((state:Appstate) => state.game.board);
+    const xIsNext = useSelector((state:Appstate) => state.game.player);
 
     const handleClick = (i: number) => {
         dispatch(attemptClick({ i, squares, xIsNext }));

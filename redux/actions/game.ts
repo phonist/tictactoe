@@ -1,9 +1,11 @@
-import { UPDATE_GAME } from '../types/game';
+import { UpdateGameActionType, UPDATE_GAME } from '../types/game';
 
-export const updateGame = (board, player) => ({
+export const updateGame = (board, player) : UpdateGameActionType => ({
     type: UPDATE_GAME,
     payload: {
-        board,
-        player
+        game: {
+            board,
+            player
+        }
     }
 });
