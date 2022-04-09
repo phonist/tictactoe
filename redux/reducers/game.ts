@@ -1,4 +1,4 @@
-import { UPDATE_GAME, GameStateType } from "../types/game";
+import { UPDATE_GAME, GameStateType, UpdateGameType } from "../types/game";
 
 const initialState: GameStateType = {
     board: new Array(9).fill(null),
@@ -13,8 +13,8 @@ export const gameReducer = (
         case UPDATE_GAME:
             return {
                 ...state,
-                board: action.payload.game.board,
-                player: action.payload.game.player ? false : true
+                board: action.payload.board,
+                player: action.payload.player ? false : true
             }
         default:
             return state;

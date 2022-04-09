@@ -1,5 +1,4 @@
-import { combineReducers } from 'redux'
-import * as types from './redux/types'
+import { combineReducers } from 'redux' 
 import { gameReducer } from './reducers/game'
 
 // COMBINED REDUCERS

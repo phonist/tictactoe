@@ -2,11 +2,15 @@ import { Dispatch } from 'redux'
 import { updateGame } from '../actions/game'
 import { UpdateGameType } from '../types/game'
 
-export const attemptClick = (params:any) => async (dispatch : Dispatch<UpdateGameType>) => {
-    const squaresClone = [...params.squares];
-    if(params.squares[params.i] !== null) {
+export const attemptClick = (i:number, squares:string[], xIsNext:boolean) => async (dispatch : Dispatch<UpdateGameType>) => {
+    const squaresClone = [...squares];
+    if(squares[i] !== null) {
         return;
     }
-    squaresClone[params.i] = params.xIsNext ? 'X' : 'O'
-    dispatch(updateGame(squaresClone, params.xIsNext));
+    squaresClone[i] = xIsNext ? 'X' : 'O'
+    let params = {
+        board: squaresClone,
+        player: xIsNext
+    }
+    dispatch(updateGame(params));
 }

@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import Square from './Square';
 import { attemptClick } from '../redux/thunks/game';
 import { useSelector, useDispatch } from 'react-redux';
-import { AppState } from '../redux/reducers';
+import { AppState } from '../redux/store';
 import { Box, Card, CardContent, CardHeader, Grid, Typography } from '@mui/material';
 
 function Board() {
     const dispatch = useDispatch();
-    const squares = useSelector((state:Appstate) => state.game.board);
-    const xIsNext = useSelector((state:Appstate) => state.game.player);
+    const squares = useSelector((state:AppState) => state.game.board);
+    const xIsNext = useSelector((state:AppState) => state.game.player);
 
     const handleClick = (i: number) => {
-        dispatch(attemptClick({ i, squares, xIsNext }));
+        dispatch(attemptClick(i, squares, xIsNext));
     }
 
     const renderSquare = (i: number) => {
@@ -21,7 +21,7 @@ function Board() {
             handleClick(i) } }
         />
     }
-    const winner = calculateWinner(squares);
+    const winner = calculateWinner(squares as string[]);
     let status;
     if(winner){
         status = 'Winner: ' + winner;
@@ -70,7 +70,7 @@ function Board() {
 
 export default Board;
 
-function calculateWinner(squares) {
+function calculateWinner(squares:string[]) {
     const lines = [
         [0, 1, 2],
         [3, 4, 5],

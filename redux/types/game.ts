@@ -1,16 +1,14 @@
+import { Game } from './interface/game'
+
 export const UPDATE_GAME = 'UPDATE_GAME';
 
-//typescript: interface for payload
-interface Game {
+//typescript: interface for redux's state
+interface GameStateTypeAction {
     board: string[];
     player: boolean;
 }
 
-//typescript: interface for redux's state
-interface GameStateType {
-    board: string[];
-    player: boolean;
-}
+export type GameStateType = GameStateTypeAction
 
 //typescript: interface for redux's action
 interface UpdateGameActionType {
