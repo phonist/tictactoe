@@ -16,7 +16,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Timer](https://github.com/phonist/tictactoe/blob/main/public/assets/gameboard.png?raw=true)
+![Tic Tac Toe](https://github.com/phonist/tictactoe/blob/main/public/assets/gameboard.png?raw=true)
 
 This is a straightforward Tic Tac Toe game.
 The game is build using NextJs on top of React with Typescript.
@@ -33,7 +33,7 @@ Then there's redux, redux-thunk, and material-UI.
 
 <!-- GETTING STARTED -->
 ## Getting Started
-The project are mainly categorize into two parts:
+The project are mainly categorize into three parts (UI, redux logic and typescript interface):
 ```
 pages
 |-- index.tsx
