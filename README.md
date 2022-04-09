@@ -19,10 +19,10 @@
 ![Timer](https://github.com/phonist/tictactoe/blob/main/public/assets/gameboard.png?raw=true)
 
 This is a straightforward Tic Tac Toe game.
-The game was built using NextJs on top of React with Typescript.
+The game is build using NextJs on top of React with Typescript.
 Then there's redux, redux-thunk, and material-UI.
 
-### Built With
+### Build With
 * [React](https://reactjs.org/)
 * [NextJs](https://nextjs.org/docs/basic-features/typescript)
 * [Typescript](https://www.typescriptlang.org/)
